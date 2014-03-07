@@ -1,0 +1,15 @@
+<doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../styles.css" />
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="myCtrl">
+			<input ng-model="myValue"></input>
+			<p>$scope.myValue is : {{myValue}}</p>
+			<p>I can evaluate an expression: 1 + 1 = {{ 1 + 1 }}</p>
+		</div>
+		<script src="../bower_components/angular/angular.js"></script>
+		<script src="ex1.js"></script>
+	</body>
+</html>
