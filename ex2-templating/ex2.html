@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../styles.css" />
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="myListController">
+			<div ng-repeat="myPerson in myCollection">
+				<h1>{{myPerson.name}}</h1>
+				<p>{{myPerson.address}}</p>
+				<p ng-show="myPerson.name === 'Ian'">Hi Ian</p>
+			</div>
+		</div>
+		<script src="../bower_components/angular/angular.js"></script>
+		<script src="ex2.js"></script>
+	</body>
+</html>
