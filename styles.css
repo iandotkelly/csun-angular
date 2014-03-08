@@ -3,3 +3,14 @@ input {
 	height: 28px;
 	font-size: 14px;
 }
+
+.outline {
+	margin: 20px;
+	padding: 10px;
+	outline: black 2px solid;
+	width: 200px;
+}
+
+.name {
+	font-weight: bold;
+}

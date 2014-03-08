@@ -5,13 +5,13 @@
 	</head>
 	<body ng-app="myApp">
 		<div ng-controller="myListController">
-			<div ng-repeat="myPerson in myCollection">
-				<h1>{{$index + 1}} : {{myPerson.name}}</h1>
-				<p>{{myPerson.address}}</p>
-				<p ng-show="myPerson.name === 'Ian'">Hi Ian</p>
+			<label for='search'>Search:</label>
+			<input id='search' ng-model="myFilter"></input>
+			<div ng-repeat="myPerson in myCollection | filter:myFilter">
+				<address-widget person='myPerson'/>
 			</div>
 		</div>
 		<script src="../bower_components/angular/angular.js"></script>
-		<script src="ex2.js"></script>
+		<script src="ex4.js"></script>
 	</body>
 </html>
