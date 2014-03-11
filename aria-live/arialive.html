@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../styles.css" />
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="myListController">
+			<label for='search'>Search:</label>
+			<input id='search' ng-model="myFilter"/>
+			<div ng-repeat="myPerson in myCollection | filter:myFilter | arialive:'assertive'">
+				<div data-address-widget person='myPerson'/>
+			</div>
+		</div>
+		<div class="sr-only" id="assertive" aria-live="assertive" aria-atomic="true" aria-relevant="additions" >
+		</div>
+		<script src="../bower_components/angular/angular.js"></script>
+		<script src="arialive.js"></script>
+	</body>
+</html>
