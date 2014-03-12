@@ -5,6 +5,8 @@
 	</head>
 	<body ng-app="myApp">
 		<div ng-controller="myListController">
+			<!-- a section that repeats depending on the number of
+			     items in its collecton -->
 			<div ng-repeat="myPerson in myCollection">
 				<h1>{{$index + 1}} : {{myPerson.name}}</h1>
 				<p>{{myPerson.address}}</p>

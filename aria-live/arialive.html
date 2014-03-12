@@ -5,17 +5,21 @@
 	</head>
 	<body ng-app="myApp">
 		<div ng-controller="myListController">
+			<!-- the search input -->
 			<label for='search'>Search:</label>
 			<input id='search' ng-model="myFilter"/>
+			<!-- the repeater which shows the names and addresses -->
 			<div ng-repeat="myPerson in myCollection | filter:myFilter">
 				<div data-address-widget person='myPerson'/>
 			</div>
 		</div>
+		<!-- the aria live region -->
 		<div class="sr-only" aria-live="polite" aria-atomic="true" aria-relevant="additions">
 			<div ng-repeat="a in announcements">
 				<div>{{a.message}}</div>
 			</div>
 		</div>
+		<!-- scripts -->
 		<script src="../bower_components/angular/angular.js"></script>
 		<script src="arialive.js"></script>
 	</body>

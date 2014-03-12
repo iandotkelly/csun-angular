@@ -1,10 +1,21 @@
 
 var myApp = angular.module('myApp', []);
 
-myApp.controller('myListController', function ($scope, $log, filterFilter) {
+/**
+ * The controller for the search list application
+ *
+ * @param  {Object}		$scope       The angular scope object
+ * @param  {Function}	filterFilter The basic filter used for the search box
+ */
+myApp.controller('myListController', function ($scope, filterFilter) {
 
+	// holds the array of announcements to be injected into
+	// the aria-live region
 	$scope.announcements = [];
 
+	// a watch on the myFilter property of the scope - to push
+	// a message to the announcements when the search input
+	// is modified
 	$scope.$watch('myFilter', function (value) {
 
 		var filtered = filterFilter($scope.myCollection, value);
@@ -22,6 +33,7 @@ myApp.controller('myListController', function ($scope, $log, filterFilter) {
 		$scope.announcements.push({message: message});
 	});
 
+	// some example data
 	$scope.myCollection = [
 		{
 			name: 'Ian',
@@ -39,7 +51,8 @@ myApp.controller('myListController', function ($scope, $log, filterFilter) {
 
 });
 
-myApp.directive('addressWidget', function ($compile) {
+// a directive for the address widget
+myApp.directive('addressWidget', function () {
 
 	return {
 		scope: {
@@ -52,5 +65,4 @@ myApp.directive('addressWidget', function ($compile) {
 			'	<div ng-show="person.name === \'Ian\'">Hello Ian</div>' +
 			'</div>'
 	};
-
 });

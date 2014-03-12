@@ -5,8 +5,12 @@
 	</head>
 	<body ng-app="myApp">
 		<div ng-controller="myCtrl">
-			<input ng-model="myValue"></input>
+			<!-- simple input field -->
+			<input ng-model="myValue"/>
+			<!-- showing the value is bound to the model
+				and can be included in the template -->
 			<p>$scope.myValue is : {{myValue}}</p>
+			<!-- and that angular can evaluate expressions -->
 			<p>I can evaluate an expression: 1 + 1 = {{ 1 + 1 }}</p>
 		</div>
 		<script src="../bower_components/angular/angular.js"></script>

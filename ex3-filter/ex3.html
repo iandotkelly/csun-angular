@@ -5,8 +5,10 @@
 	</head>
 	<body ng-app="myApp">
 		<div ng-controller="myListController">
+			<!-- an input for filtering the results -->
 			<label for='search'>Search:</label>
-			<input id='search' ng-model="myFilter"></input>
+			<input id='search' ng-model="myFilter"/>
+			<!-- the repeating section, filtered by the model myFilter -->
 			<div ng-repeat="myPerson in myCollection | filter:myFilter">
 				<h1>{{myPerson.name}}</h1>
 				<p>{{myPerson.address}}</p>
