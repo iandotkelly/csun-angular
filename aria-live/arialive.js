@@ -1,7 +1,26 @@
 
 var myApp = angular.module('myApp', []);
 
-myApp.controller('myListController', function ($scope) {
+myApp.controller('myListController', function ($scope, $log, filterFilter) {
+
+	$scope.announcements = [];
+
+	$scope.$watch('myFilter', function (value) {
+
+		var filtered = filterFilter($scope.myCollection, value);
+		var message;
+
+		switch (filtered.length) {
+		case 0: message = 'No results';
+			break;
+		case 1: message = 'One result ' + filtered[0].name + ' ' + filtered[0].address;
+			break;
+		default: message = '' + filtered.length + ' results';
+			break;
+		}
+
+		$scope.announcements.push({message: message});
+	});
 
 	$scope.myCollection = [
 		{
@@ -32,41 +51,6 @@ myApp.directive('addressWidget', function ($compile) {
 			'   <div class="address">{{person.address}}</div>' +
 			'	<div ng-show="person.name === \'Ian\'">Hello Ian</div>' +
 			'</div>'
-	};
-
-});
-
-myApp.filter('arialive', function() {
-
-	var ariaTimeout;
-
-	return function (input, target) {
-
-		target = target || 'assertive';
-
-		if (ariaTimeout) {
-			clearTimeout(ariaTimeout);
-		}
-
-		ariaTimeout = setTimeout(function() {
-			// todo: this is a very clunky way of doing this
-
-			// get the live element
-			var live = document.getElementById(target);
-
-			var message = document.createElement('div');
-
-			switch (input.length) {
-			case 0: message.innerHTML = 'No results'; break;
-			case 1: message.innerHTML = 'One result ' + input[0].name + ' ' + input[0].address; break;
-			default: message.innerHTML = '' + input.length + ' results'; break;
-			}
-
-			console.log(message);
-			live.appendChild(message);
-		}, 100);
-
-		return input;
 	};
 
 });

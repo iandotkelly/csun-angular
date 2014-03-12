@@ -7,11 +7,14 @@
 		<div ng-controller="myListController">
 			<label for='search'>Search:</label>
 			<input id='search' ng-model="myFilter"/>
-			<div ng-repeat="myPerson in myCollection | filter:myFilter | arialive:'assertive'">
+			<div ng-repeat="myPerson in myCollection | filter:myFilter">
 				<div data-address-widget person='myPerson'/>
 			</div>
 		</div>
-		<div class="sr-only" id="assertive" aria-live="assertive" aria-atomic="true" aria-relevant="additions" >
+		<div class="sr-only" aria-live="polite" aria-atomic="true" aria-relevant="additions">
+			<div ng-repeat="a in announcements">
+				<div>{{a.message}}</div>
+			</div>
 		</div>
 		<script src="../bower_components/angular/angular.js"></script>
 		<script src="arialive.js"></script>
