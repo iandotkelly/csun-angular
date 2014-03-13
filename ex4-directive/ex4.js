@@ -26,7 +26,7 @@ myApp.directive('addressWidget', function ($compile) {
 		scope: {
 			person: '=person'
 		},
-		restrict: 'E',
+		restrict: 'A',
 		template: '<div class="outline">' +
 			'   <div class="name">{{person.name}}</div>' +
 			'   <div class="address">{{person.address}}</div>' +

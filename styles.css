@@ -23,3 +23,12 @@ input {
 	overflow: hidden;
 	clip: rect(1px 1px 1px 1px);
 }
+
+
+.instant input.ng-invalid.ng-dirty {
+    background-color: #FA787E;
+}
+
+.instant input.ng-valid.ng-dirty {
+    background-color: #78FA89;
+}

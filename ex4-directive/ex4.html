@@ -7,8 +7,8 @@
 		<div ng-controller="myListController">
 			<label for='search'>Search:</label>
 			<input id='search' ng-model="myFilter"/>
-			<div ng-repeat="myPerson in myCollection | filter:myFilter">
-				<address-widget person='myPerson'/>
+			<div data-ng-repeat="myPerson in myCollection | filter:myFilter">
+				<div data-address-widget person='myPerson'/>
 			</div>
 		</div>
 		<script src="../bower_components/angular/angular.js"></script>
