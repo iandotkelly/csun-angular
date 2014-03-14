@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../styles.css" />
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="myFormCtrl">
+			<form novalidate class="onblur" name="myForm" ng-submit="submit(user)">
+
+				<label for="name">Name:</label>
+				<input id="name" name="name" type="text" ng-model="user.name" required ng-minlength="5"
+					aria-describedby="{{myForm.name.failsValidation() ? 'nameerror' : ''}}"
+					aria-invalid="{{myForm.name.failsValidation()}}"/>
+				<div id="nameerror" ng-show="myForm.name.failsValidation()">Name required, minimum length 5 characters</div>
+				</br></br>
+
+				<label for="email">Email:</label>
+				<input id="email" name="email" type="email" ng-model="user.email" required
+					aria-describedby="{{myForm.email.failsValidation() ? 'emailerror' : ''}}"
+					aria-invalid="{{myForm.email.failsValidation()}}"/>
+				<div id="emailerror" ng-show="myForm.email.failsValidation()">Valid email address required</div>
+				</br></br>
+
+				<button type="submit">Save</button>
+
+				<p>myForm.name.$valid = {{myForm.name.$valid}}</p>
+				<p>myForm.name.failsValidation() = {{myForm.name.failsValidation()}}</p>
+				<p>myForm.name.hasVisited = {{myForm.name.hasVisited}}</p>
+				<p>myForm.name.hasFocus = {{myForm.name.hasFocus}}</p>
+
+				<p>myForm.email.$valid = {{myForm.email.$valid}}</p>
+				<p>myForm.email.failsValidation() = {{myForm.email.failsValidation()}}</p>
+				<p>myForm.email.hasVisited = {{myForm.email.hasVisited}}</p>
+				<p>myForm.email.hasFocus = {{myForm.email.hasFocus}}</p>
+
+				<p>myForm.$valid = {{myForm.$valid}}</p>
+				<pre>user = {{ user | json }}</pre>
+			</form>
+		</div>
+		<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="../bower_components/angular/angular.js"></script>
+		<script src="accessible-form.js"></script>
+	</body>
+</html>

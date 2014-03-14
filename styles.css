@@ -32,3 +32,11 @@ input {
 .instant input.ng-valid.ng-dirty {
     background-color: #78FA89;
 }
+
+.onblur input.ng-invalid.has-visited {
+	background-color: #FA787E;
+}
+
+.onblur input.ng-valid.has-visited {
+    background-color: #78FA89;
+}
