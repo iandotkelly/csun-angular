@@ -20,7 +20,7 @@ myApp.controller('myListController', function ($scope) {
 
 });
 
-myApp.directive('addressWidget', function ($compile) {
+myApp.directive('addressWidget', function () {
 
 	return {
 		scope: {
