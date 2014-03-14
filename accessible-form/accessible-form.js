@@ -52,33 +52,11 @@ myApp.directive('input', function ($timeout, $log) {
 				return !!input.hasVisited && !!input.$invalid;
 			};
 
-			/**
-			 * The ID of a validation error element
-			 * @return {String} Falsy = no validation message
-			 *                  String = ID of validation message
-			 */
-			input.validationId = function () {
-				if (input.failsValidation()) {
-					return element.attr('error-id');
-				}
-			};
-
-			// on focus not that the item has focus
-			element.on('focus', function () {
-				element.addClass('has-focus');
-
-				scope.$apply(function () {
-					input.hasFocus = true;
-				});
-			});
-
 			// on blur apply the had visited property
 			element.on('blur', function () {
-				element.removeClass('has-focus');
 				element.addClass('has-visited');
 
 				scope.$apply(function () {
-					input.hasFocus = false;
 					input.hasVisited = true;
 				});
 			});
@@ -88,7 +66,6 @@ myApp.directive('input', function ($timeout, $log) {
 				element.addClass('has-visited');
 
 				scope.$apply(function () {
-					input.hasFocus = false;
 					input.hasVisited = true;
 				});
 			});
