@@ -32,8 +32,6 @@ myApp.directive('input', function ($timeout, $log) {
 		require: ['ngModel'],
 		link: function (scope, element, attrs, ctrl) {
 
-			$log.log(ctrl);
-
 			// add a set focus method to the model's controller
 			var input = ctrl[0];
 			input.setFocus = function () {
