@@ -10,7 +10,7 @@
 			<input id='search' ng-model="myFilter"/>
 			<!-- the repeater which shows the names and addresses -->
 			<div ng-repeat="myPerson in myCollection | filter:myFilter">
-				<div data-address-widget person='myPerson'/>
+				<div address-widget person='myPerson'></div>
 			</div>
 		</div>
 		<!-- the aria live region -->

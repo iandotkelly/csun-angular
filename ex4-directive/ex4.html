@@ -4,11 +4,11 @@
 		<link rel="stylesheet" type="text/css" href="../styles.css" />
 	</head>
 	<body ng-app="myApp">
-		<div ng-controller="myListController">
+		<div ng-controller="myListCtrl">
 			<label for='search'>Search:</label>
 			<input id='search' ng-model="myFilter"/>
-			<div data-ng-repeat="myPerson in myCollection | filter:myFilter">
-				<div data-address-widget person='myPerson'/>
+			<div ng-repeat="myPerson in myCollection | filter:myFilter">
+				<div address-widget person='myPerson'></div>
 			</div>
 		</div>
 		<script src="../bower_components/angular/angular.js"></script>

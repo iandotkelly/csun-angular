@@ -1,7 +1,7 @@
 
 var myApp = angular.module('myApp', []);
 
-myApp.controller('myListController', function ($scope) {
+myApp.controller('myListCtrl', function ($scope) {
 
 	$scope.myCollection = [
 		{
