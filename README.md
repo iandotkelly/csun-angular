@@ -7,6 +7,10 @@ Directories 'ex1...' through 'ex5...' contain examples of AngularJs techniques, 
 
 Directories 'accessible-form' & 'aria-live' contain examples of fixing some common accessibility issues.
 
+You can open the index file and play with these directly by going to:
+
+[http://rawgithub.com/iandotkelly/csun-angular/master/index.html](http://rawgithub.com/iandotkelly/csun-angular/master/index.html)
+
 Feel free to use these.  I would recommend also trying out the official tutorial at:
 
 [http://docs.angularjs.org/tutorial](http://docs.angularjs.org/tutorial)
