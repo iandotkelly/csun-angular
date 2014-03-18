@@ -9,7 +9,7 @@ Directories 'accessible-form' & 'aria-live' contain examples of fixing some comm
 
 You can open the index file and play with these directly by going to:
 
-[http://rawgithub.com/iandotkelly/csun-angular/master/index.html](http://rawgithub.com/iandotkelly/csun-angular/master/index.html)
+[http://iandotkelly.github.io/csun-angular/](http://iandotkelly.github.io/csun-angular/)
 
 Feel free to use these.  I would recommend also trying out the official tutorial at:
 
