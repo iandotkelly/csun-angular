@@ -4,19 +4,21 @@
 		<link rel="stylesheet" type="text/css" href="../styles.css" />
 	</head>
 	<body ng-app="myApp">
-		<div ng-controller="myListController">
-			<!-- the search input -->
-			<label for='search'>Search:</label>
-			<input id='search' ng-model="myFilter"/>
-			<!-- the repeater which shows the names and addresses -->
-			<div ng-repeat="myPerson in myCollection | filter:myFilter">
-				<div address-widget person='myPerson'></div>
+		<div ng-controller="myListCtrl">
+			<div>
+				<!-- the search input -->
+				<label for='search'>Search:</label>
+				<input id='search' ng-model="myFilter"/>
+				<!-- the repeater which shows the names and addresses -->
+				<div ng-repeat="myPerson in myCollection | filter:myFilter">
+					<div address-widget person='myPerson'></div>
+				</div>
 			</div>
-		</div>
-		<!-- the aria live region -->
-		<div class="sr-only" aria-live="assertive" aria-atomic="true" aria-relevant="additions">
-			<div ng-repeat="a in announcements">
-				<div>{{a.message}}</div>
+			<!-- the aria live region -->
+			<div class="sr-only" aria-live="assertive" aria-atomic="true" aria-relevant="additions">
+				<div ng-repeat="a in announcements">
+					<div>{{a.message}}</div>
+				</div>
 			</div>
 		</div>
 		<!-- scripts -->

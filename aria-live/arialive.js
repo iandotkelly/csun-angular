@@ -7,7 +7,7 @@ var myApp = angular.module('myApp', []);
  * @param  {Object}		$scope       The angular scope object
  * @param  {Function}	filterFilter The basic filter used for the search box
  */
-myApp.controller('myListController', function ($scope, filterFilter) {
+myApp.controller('myListCtrl', function ($scope, filterFilter) {
 
 	// holds the array of announcements to be injected into
 	// the aria-live region
@@ -58,7 +58,7 @@ myApp.directive('addressWidget', function () {
 		scope: {
 			person: '=person'
 		},
-		restrict: 'A',
+		restrict: 'AE',
 		template: '<div class="outline">' +
 			'   <div class="name">{{person.name}}</div>' +
 			'   <div class="address">{{person.address}}</div>' +
