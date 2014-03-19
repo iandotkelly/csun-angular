@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../styles.css" />
+	</head>
+	<body ng-app="myApp">
+		<div >
+			<ul>
+				<li><a href="#/view1">View 1</a></li>
+				<li><a href="#/view2">View 2</a></li>
+			</ul>
+
+			<!-- this is where the templates are injected
+			but each time the route is changed, focus is lost to the top
+			of the page, rather than being managed in some way -->
+			<button>Outside ng-view</button>
+			<div ng-view></div>
+			<button>Outside ng-view</button>
+
+		</div>
+		<script src="../bower_components/angular/angular.js"></script>
+		<script src="../bower_components/angular-route/angular-route.js"></script>
+		<script src="ex6.js"></script>
+	</body>
+</html>
